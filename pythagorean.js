@@ -11,14 +11,16 @@ function setup(){
   controls[0].class('btn btn-warning').html('3:4:5').mousePressed(chgRatio);
   controls.push(createSlider(0,10,3,1).parent('#depth'));
 
-  main=createCanvas(800,500).parent("#canva");
+  main=createCanvas(windowWidth,windowHeight-150).parent("#canva");
+  main.mousePressed(growThree);
+
   colorMode(HSB, 100);
   angleMode(DEGREES);
 }
 
 function draw(){
   background(256);
-  var mysquare = new Square(350,350,60);
+  var mysquare = new Square(int(width/2),int(height*0.8 ),100);
   mysquare.plot();
   
   translate(mysquare.x, mysquare.y);
@@ -29,7 +31,8 @@ function draw(){
 
 function chgRatio(){
   if(ratio[0]==0){
-    ratio=[1,5,12,13];
+    // ratio=[1,5,12,13];
+    ratio=[1,20,21,29];
     controls[0].html('5:12:13')
     controls[0].removeClass('btn-warning');
     controls[0].addClass('btn-info');
@@ -44,6 +47,14 @@ function chgRatio(){
   controls[0].addClass('btn-warning');
   console.log('changed to 3,4,5');
   console.log(ratio);
+}
+
+function growThree(){
+  if(controls[1].value()<10){
+    controls[1].value(controls[1].value()+1);
+    return;
+  }
+  controls[1].value(3);
 }
 
 class Square{
