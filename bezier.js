@@ -3,7 +3,9 @@
 // http://patreon.com/codingtrain
 // Code for: https://youtu.be/fcdNSZ9IzJM
 
-var bg_color = [255, 243, 212];
+var main;
+
+var bg_color = [61,0,99];
 var pt_color = [255-13, 255-9, 255-1];
 
 var canMove = false;
@@ -20,14 +22,14 @@ var Ps=[];
 // var h = 1400;
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  main=createCanvas(windowWidth,windowHeight-10).parent('#canva');
 
-  btn = createButton();
-  btn.mousePressed(onclik);
+//   btn = createButton();
+//   btn.mousePressed(onclik);
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, windowHeight-10);
 }
 
 function onclik(){
@@ -68,7 +70,7 @@ function mouseReleased(){
 
 function draw() {
   background(bg_color[0], bg_color[1], bg_color[2]);
-  background(20);
+  // background(20);
   // background(0);
   for(let i=0 ; i<bezierPoints.length ; i++){
     bezierPoints[i].show();
@@ -100,7 +102,8 @@ function draw() {
     beginShape();
     for(let i=0; i<Qs.length; i++){
       colorMode(HSB);
-      stroke(i,100,100);
+      // stroke(i,100,100);
+      stroke(290, 35, 98);
       vertex(Qs[i].x, Qs[i].y);
     }
     endShape();

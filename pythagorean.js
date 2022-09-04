@@ -1,7 +1,7 @@
 var main;
 var controls;
 var ratio = [0,3,4,5];
-var dpth;
+var bgColor = (278, 100, 39);
 
 function setup(){
 
@@ -19,7 +19,7 @@ function setup(){
 }
 
 function draw(){
-  background(256);
+  background(77, 100, 39);
   var mysquare = new Square(int(width/2),int(height*0.8 ),100);
   mysquare.plot();
   
@@ -54,7 +54,7 @@ function growThree(){
     controls[1].value(controls[1].value()+1);
     return;
   }
-  controls[1].value(3);
+  controls[1].value(2);
 }
 
 class Square{
@@ -68,7 +68,7 @@ class Square{
   }
   
   plot(leg=false){
-    stroke(256);
+    stroke(77, 100, 39);
     fill(this.c, 95, 80);
     
     if (leg){
