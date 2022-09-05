@@ -31,8 +31,8 @@ function draw(){
 
 function chgRatio(){
   if(ratio[0]==0){
-    // ratio=[1,5,12,13];
-    ratio=[1,20,21,29];
+    ratio=[1,5,12,13];
+    // ratio=[1,20,21,29];
     controls[0].html('5:12:13')
     controls[0].removeClass('btn-warning');
     controls[0].addClass('btn-info');
